@@ -1,6 +1,6 @@
-import TYPES from "./actionsTypes";
+import TYPES from "./actionTypes";
 
-export const productsInitialState = {
+  export const productsInitialState = {
     products: [
       {
         "id": 1,
