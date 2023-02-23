@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-      <h1 className='title'>Learn useReducer</h1>
+      <h1 className='title'>Learn useReducer with E-COMMERCE</h1>
       <hr />
       <h2 className='subtitle_products'>Products in stock</h2>
       <div className='container_grid_products'>
@@ -48,12 +48,17 @@ function App() {
         }
       </div>
       <hr />
+
       <h2 className='subtitle_shopping_cart'>Shopping cart</h2>
-      <div>
+
+      <div className='container_buttons'>
         <button className='btn btn_totalPrice' onClick={() => claculateTotalPriceOfCart()}>Total price</button>
-        <button className='btn btn_clearCart' onClick={() => clearCart()}>Clear cart</button>
+          {state.totalPriceShoppingCart > 0 && <p className='totalPrice_shoppingCart'>Total price: {state.totalPriceShoppingCart}</p>}
+        <button className='btn btn_ClearCart' onClick={() => clearCart()}>Clear cart</button>
       </div>
+
         {state.cart.length === 0 && <p className='text_NoProductsInCart'>There are no products in the cart</p>}
+
       <div className='container_grid_shopping_cart'>
         {
           state.cart.map((productCart) => {
